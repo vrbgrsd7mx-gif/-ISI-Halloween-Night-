@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISI Halloween Movie Night</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000000, #2c003e);
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 { font-size: 2.5em; color: #ff7518; text-shadow: 2px 2px #000; }
+    p { font-size: 1.2em; margin-bottom: 20px; }
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(255, 117, 24, 0.3);
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #ff7518;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background-color: #ff9b4a; }
+    #thankyou { margin-top: 20px; font-size: 1.2em; color: #9cff9c; display: none; }
+  </style>
+</head>
+<body>
+  <h1>🎃 ISI Halloween Movie Night 🎬</h1>
+  <p>Join us for a spooky night full of fun and scares! 👻</p>
+  <p><strong>Ticket Price: $6</strong></p>
+
+  <form id="regForm" action="https://docs.google.com/forms/d/e/1FAIpQLScCF_LFFRpbuGEZgYM3-1zMbrFxRcPD6diFf5nm2heSxEmK9Q/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <input type="text" name="entry.803516705" placeholder="Full Name" required>
+    <input type="tel" name="entry.2082378188" placeholder="Phone Number" required>
+    <button type="submit">Register Now</button>
+  </form>
+
+  <p id="thankyou">✅ Thank you for registering! See you at the event! 🎃</p>
+
+  <iframe name="hidden_iframe" style="display:none;" onload="if(submitted){document.getElementById('regForm').reset();document.getElementById('thankyou').style.display='block';}"></iframe>
+
+  <script>
+    var submitted = false;
+  </script>
+</body>
+</html>
